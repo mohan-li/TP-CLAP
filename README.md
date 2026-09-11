@@ -64,9 +64,9 @@ CLAP+AudioMCQ ablations and comparisons against other CLAP variants and audio-LL
 
 **Audio-text retrieval** (R@1, %)
 
-| | AudioCaps T2A | AudioCaps A2T | Clotho T2A | Clotho A2T |
-| --- | --- | --- | --- | --- |
-| TP-CLAP | 42.6 | 57.2 | 21.3 | 27.1 |
+| AudioCaps T2A | AudioCaps A2T | Clotho T2A | Clotho A2T |
+| --- | --- | --- | --- |
+| 42.6 | 57.2 | 21.3 | 27.1 |
 
 **Zero-shot classification** (accuracy, %; mAP for FSD50K)
 
@@ -76,9 +76,9 @@ CLAP+AudioMCQ ablations and comparisons against other CLAP variants and audio-LL
 
 **Audio question answering** (accuracy, %)
 
-| | MMAU Sound | MMAU Music | MMAR Sound | MMAR Music |
-| --- | --- | --- | --- | --- |
-| TP-CLAP | 71.47 | 55.99 | 47.88 | 32.02 |
+| MMAU Sound | MMAU Music | MMAR Sound | MMAR Music |
+| --- | --- | --- | --- |
+| 71.47 | 55.99 | 47.88 | 32.02 |
 
 **Attribute-focused audio-to-audio retrieval on NSynth** (%) — `Con.` is the prompt-conditioned
 embedding, `Uncon.` the plain one
