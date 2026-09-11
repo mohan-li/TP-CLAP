@@ -1,6 +1,6 @@
 # TP-CLAP
 
-TP-CLAP (Text-Prompted CLAP) extends CLAP with a lightweight cross-attention fusion module that
+TP-CLAP (Text-Prompted Contrastive Language-Audio Pretraining) extends CLAP with a lightweight cross-attention fusion module that
 conditions audio representations on a text prompt. This lets a compact contrastive model (219M
 parameters) answer multiple-choice questions about audio and retrieve clips by a specific attribute
 (e.g. tempo, instrument) rather than by global similarity.
