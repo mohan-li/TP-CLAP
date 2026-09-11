@@ -7,7 +7,7 @@ parameters) answer multiple-choice questions about audio and retrieve clips by a
 
 This repository contains the evaluation scripts to
 produce the paper's results. Paper: *Text-Prompted CLAP: Learning
-Text-Conditioned Audio Representations via Contrastive Learning* (Li, Doddipatla and Woodland),
+Text-Conditioned Audio Representations via Contrastive Learning*,
 [arXiv:2607.25085](https://arxiv.org/abs/2607.25085).
 
 <p align="center"><img src="docs/TP-CLAP.png" alt="TP-CLAP architecture" width="480"></p>
