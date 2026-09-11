@@ -1,0 +1,77 @@
+# Copy to configs/datasets.yaml and point each entry at your local copy of the data.
+# Tasks whose paths are absent are skipped with a note instead of failing.
+
+model:
+  audio_encoder: mispeech/ced-base
+  text_encoder: google-bert/bert-base-uncased
+  embed_dim: 1024
+  num_fusion_layers: 2
+
+# Weights per task. A task without its own entry uses --checkpoint, or `default`.
+checkpoints:
+  default: checkpoints/tp-clap.pt
+  a2a_retrieval_nsynth_instrument: checkpoints/tp-clap_nsynth.pt
+  a2a_retrieval_nsynth_pitch: checkpoints/tp-clap_nsynth.pt
+  a2a_retrieval_nsynth_source: checkpoints/tp-clap_nsynth.pt
+  a2a_retrieval_mtt_genre: checkpoints/tp-clap_mtt.pt
+  a2a_retrieval_mtt_instrument: checkpoints/tp-clap_mtt.pt
+  a2a_retrieval_mtt_tempo: checkpoints/tp-clap_mtt.pt
+
+datasets:
+  # ---- Audio-text retrieval -------------------------------------------------
+  audiocaps:
+    # test.csv with columns: youtube_id, start_time, caption
+    csv: /path/to/audiocaps/csv/test.csv
+    # clips named <youtube_id>_<start_time>.wav
+    audio_dir: /path/to/audiocaps/audio
+
+  clotho:
+    # clotho_captions_evaluation.csv: file_name, caption_1 ... caption_5
+    csv: /path/to/clotho/csv/clotho_captions_evaluation.csv
+    audio_dir: /path/to/clotho/audio/evaluation
+
+  # ---- Zero-shot classification --------------------------------------------
+  esc50:
+    csv: /path/to/ESC-50/meta/esc50.csv
+    audio_dir: /path/to/ESC-50/audio
+
+  fsd50k:
+    csv: /path/to/FSD50K/csv/eval.csv
+    audio_dir: /path/to/FSD50K/audio/eval
+
+  us8k:
+    csv: /path/to/UrbanSound8K/metadata/UrbanSound8K.csv
+    audio_dir: /path/to/UrbanSound8K/audio     # contains fold1 ... fold10
+
+  vocalsound:
+    json: /path/to/vocalsound/datafiles/te.json
+    audio_dir: /path/to/vocalsound/audio_16k
+
+  cremad:
+    audio_dir: /path/to/CREMA-D/AudioWAV
+  gtzan:
+    audio_dir: /path/to/gtzan/genres          # one subdirectory per genre
+
+  beijingopera:
+    audio_dir: /path/to/beijing_opera/beijing_opera_percussion_instrument_1.0
+
+  # shared by the nsynth classification and audio-to-audio retrieval tasks
+  nsynth:
+    json: /path/to/nsynth/nsynth-test/examples.json
+    audio_dir: /path/to/nsynth/nsynth-test/audio
+  
+  # ---- Attribute-focused audio-to-audio retrieval ---------------------------
+  magnatagatune:
+    hf_dataset: seungheondoh/LP-MusicCaps-MTT   # tag metadata; audio is local
+    split: test
+    audio_dir: /path/to/magnatagatune/audio
+
+  # ---- Multiple-choice AQA ---------------------------------------------------
+  mmau:
+    hf_dataset: TwinkStart/MMAU               # audio ships with the dataset
+    split: v05.15.25
+
+  mmar:
+    hf_dataset: BoJack/MMAR
+    split: test
+    audio_root: /path/to/mmar                 # audio_path in the metadata is relative to this

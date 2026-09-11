@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tp-clap"
+version = "0.1.0"
+description = "Prompt-conditioned audio-text retrieval model and zero-shot evaluation suite"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Mohan Li" }]
+keywords = ["audio-text retrieval", "contrastive learning", "zero-shot audio classification"]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Sound/Audio :: Analysis",
+]
+dependencies = [
+    "torch>=2.10",
+    "transformers>=4.51",
+    "datasets>=4.5",
+    "librosa>=0.10",
+    "soundfile>=0.13",
+    "resampy>=0.4",
+    "numpy>=2.3",
+    "pandas>=2.3",
+    "pyyaml>=6.0",
+    "tqdm>=4.67",
+]
+
+[project.scripts]
+tp-clap-eval = "evaluate:main"
+
+[tool.setuptools]
+packages = ["tp_clap", "tp_clap.tasks"]
+py-modules = ["evaluate"]
