@@ -10,7 +10,7 @@ produce the paper's results. Paper: *Text-Prompted CLAP: Learning
 Text-Conditioned Audio Representations via Contrastive Learning*,
 [arXiv:2607.25085](https://arxiv.org/abs/2607.25085).
 
-<p align="center"><img src="docs/TP-CLAP.png" alt="TP-CLAP architecture" width="480"></p>
+<!-- <p align="center"><img src="docs/TP-CLAP.png" alt="TP-CLAP architecture" width="480"></p> -->
 
 ## Installation
 
