@@ -16,7 +16,7 @@ Text-Conditioned Audio Representations via Contrastive Learning* (Li, Doddipatla
 ## Installation
 
 ```bash
-git clone https://github.com/<your-org>/tp-clap.git
+git clone https://github.com/mohan-li/tp-clap.git
 cd tp-clap
 
 conda create -n tp-clap python=3.10 -y
